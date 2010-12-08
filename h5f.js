@@ -171,8 +171,10 @@ var H5F = H5F || {};
         
         if(!isNative && node.test(el.nodeName)) {
             if(el.value === "") {
+		H5F.addClass(el,'placeholder');
                 el.value = placeholder;
             } else if(el.value === placeholder && focus.test(curEvt)) {
+		H5F.removeClass(el,'placeholder');
                 el.value = "";
             }
         }
